@@ -1,0 +1,135 @@
+a{
+    text-decoration: none !important;
+}
+@font-face {
+    font-family: iranyekanwebregularfanum;
+    src: url(./font/iranyekanwebregularfanum.ttf);
+  }
+  @font-face {
+    font-family: IRANYekanWebBold;
+    src: url(./font/IRANYekanWebBold.ttf);
+  }
+  @font-face {
+    font-family: IRANYekanWebExtraBlack;
+    src: url(./font/IRANYekanWebExtraBlack.ttf);
+  }
+  @font-face {
+    font-family: IRANYekanWebExtraBold;
+    src: url(./font/IRANYekanWebExtraBold.ttf);
+  }
+  @font-face {
+    font-family: IRANYekanWebMedium;
+    src: url(./font/IRANYekanWebMedium.ttf);
+  }
+  @font-face {
+    font-family: IRANYekanWebRegular;
+    src: url(./font/IRANYekanWebRegular.ttf);
+  }
+  
+
+body {
+    font-family: iranyekanwebregularfanum;
+    direction: rtl;
+    font-size: 15px;
+    font-variant-numeric: diagonal-fractions;
+    font-feature-settings: "numr" 1;
+ 
+}
+.main-nav{
+
+}
+.main-nav ul li{
+    display: inline-block;
+    padding: 10px 20px; 
+    font-size: 1.3em;
+}
+
+.main-nav ul li a{
+    color: #000 !important;
+
+}
+.container-fluid .row{
+    max-width: 1678px;
+    margin: 0px auto;
+}
+header{
+    box-shadow: 0px 2px 10px 2px #f0efef;
+}
+
+
+.news-ticker-container {
+  display: flex;
+  align-items: center;
+  background-color: #fff; /* پس زمینه سفید برای کل نوار */
+  border: 1px solid #cce8e5; /* حاشیه سبزآبی روشن */
+  border-radius: 30px; /* گردی گوشه‌ها مطابق عکس */
+  padding: 8px; /* کمی پدینگ داخلی */
+  overflow: hidden; /* مهم: برای اینکه محتوای متحرک از کادر بیرون نزند */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.news-ticker-label {
+  background-color: #66cdaa; /* رنگ سبزآبی برچسب */
+  color: white;
+  padding: 8px 20px;
+  border-radius: 20px; /* گردی گوشه‌های برچسب */
+  font-weight: bold;
+  white-space: nowrap; /* جلوگیری از شکستن کلمه "تیتر خبری" */
+  margin-left: 10px; /* فاصله از خبرها (در حالت RTL، margin-left فاصله راست ایجاد می‌کند) */
+}
+
+.news-items-viewport {
+  flex-grow: 1; /* اجازه می‌دهد بخش خبرها فضای باقی‌مانده را پر کند */
+  overflow: hidden; /* مهم: برای ایجاد افکت پنجره مانند */
+  /* جهت حرکت انیمیشن از چپ به راست است، پس خود ویوپورت LTR باشد بهتر است */
+  direction: ltr; 
+}
+
+.news-items-wrapper {
+  display: flex; /* خبرها و کپی آنها را در یک ردیف قرار می‌دهد */
+  width: fit-content; /* عرض بر اساس محتوا */
+  /* انیمیشن برای حرکت از چپ به راست */
+  /* محتوا از 50% به چپ منتقل شده (بلوک دوم در ابتدا دیده می‌شود) و به 0 (بلوک اول دیده می‌شود) حرکت می‌کند */
+  animation: scroll-left-to-right 25s linear infinite;
+}
+
+.news-items-wrapper:hover {
+  animation-play-state: paused; /* توقف انیمیشن با هاور موس */
+}
+
+.news-content-block {
+  display: flex; /* آیتم‌های خبر را در یک خط قرار می‌دهد */
+  white-space: nowrap; /* جلوگیری از شکستن متن هر خبر */
+  /* padding-right: 20px; /* ایجاد فاصله بین دو بلوک محتوا، اگر لازم باشد */
+}
+
+.news-item {
+  padding: 0 10px; /* فاصله اطراف هر خبر */
+  color: #333;
+  font-size: 14px;
+}
+
+.news-item-separator {
+  color: #66cdaa; /* رنگ جداکننده */
+  padding: 0 5px;
+  font-size: 14px;
+  display: inline-flex; /* برای تراز عمودی بهتر */
+  align-items: center;
+}
+
+/* تعریف انیمیشن */
+@keyframes scroll-left-to-right {
+  0% {
+    transform: translateX(-50%); /* شروع از جایی که بلوک دوم (کپی) در ابتدا دیده می‌شود */
+  }
+  100% {
+    transform: translateX(0%);    /* حرکت به سمت راست تا بلوک اول به طور کامل دیده شود و بلوک دوم آماده جایگزینی باشد */
+  }
+}
+
+.news-carousel-img{
+    width: 50%;
+}
+.news-carousel-txt{
+    width: 50%;
+}
