@@ -30,41 +30,46 @@
 
 
 $(document).ready(function() {
-    $("#gallery-carousel").owlCarousel({
-        rtl: true,
-        center: false,
-        items: 3.5,  
-        margin: 10,
-        nav: false,
-        dots: false,
-        loop: true,
-        autoplay: true,
-        autoplayTimeout: 5000,
-        autoplayHoverPause: true,
-        stagePadding: 20,  
-        responsive: {
-            0: {
-                items: 1.2,  
-                stagePadding: 30
-            },
-            576: {
-                items: 1.8, 
-                stagePadding: 40
-            },
-            768: {
-                items: 2.2, 
-                stagePadding: 50
-            },
-            992: {
-                items: 2.8, 
-                stagePadding: 60
-            },
-            1200: {
-                items: 3,  
-                stagePadding: 50
-            }
-        }
-    });
+     $('#gallery-carousel').owlCarousel({
+                rtl: true,
+                loop: true,
+                // margin: 20,
+                nav: false,
+                dots: false,
+                center: true,
+                autoplay: true,
+                autoplayTimeout: 5000,
+                autoplayHoverPause: true,
+                smartSpeed: 1000,
+                stagePadding: 100,
+                responsive: {
+                    0: {
+                        items: 1.2,
+                        stagePadding: 30
+                    },
+                    576: {
+                        items: 1.5,
+                        stagePadding: 50
+                    },
+                    768: {
+                        items: 1.8,
+                        stagePadding: 70
+                    },
+                    992: {
+                        items: 2.7,
+                        stagePadding: 70
+                    },
+                    1200: {
+                        items: 3,
+                        stagePadding: 100
+                    },
+                    1400: {
+                        items: 3,
+                        stagePadding: 120
+                    }
+                }
+            });
+            
     
     // ناوبری سفارشی
     $(".gallery-nav-prev").click(function() {
@@ -102,13 +107,11 @@ $(document).ready(function() {
     const mobileNav = $('.mobile-nav');
     const mobileNavOverlay = $('.mobile-nav-overlay');
     
-    // Toggle mobile menu when hamburger button is clicked
     mobileMenuToggle.on('click', function() {
         $(this).toggleClass('active');
         mobileNav.toggleClass('active');
         mobileNavOverlay.toggleClass('active');
         
-        // Prevent body scrolling when menu is open
         if (mobileNav.hasClass('active')) {
             $('body').css('overflow', 'hidden');
         } else {
@@ -116,13 +119,18 @@ $(document).ready(function() {
         }
     });
     
-    // Close mobile menu when overlay is clicked
     mobileNavOverlay.on('click', function() {
         mobileMenuToggle.removeClass('active');
         mobileNav.removeClass('active');
         mobileNavOverlay.removeClass('active');
         $('body').css('overflow', '');
     });
+    // $('.mobile-menu-close').on('click', function(){
+    //     mobileMenuToggle.removeClass('active');
+    //     mobileNav.removeClass('active');
+    //      mobileNavOverlay.removeClass('active');
+    //     $('body').css('overflow', '');
+    // })
     
     // Handle active state for mobile navigation items
     $('.mobile-nav ul li').on('click', function() {
