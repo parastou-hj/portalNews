@@ -5,8 +5,8 @@
       // nav: true,
       dots: false,
       loop: true,
-      autoplay: true,
-      autoplayTimeout: 6000,
+      // autoplay: true,
+      // autoplayTimeout: 6000,
       autoplayHoverPause: true,
       // navText: [
       //     '<i class="fa-solid fa-chevron-right"></i>',
@@ -19,40 +19,16 @@
       },
     });
   });
-  $(".nav-right").click(function () {
-    $("#banner-owl").trigger("prev.owl.carousel");
-  });
   
-  $(".nav-left").click(function () {
-    $("#banner-owl").trigger("next.owl.carousel");
-  });
-
-  // Gallery Modal Functionality
-$(document).ready(function() {
-    // Gallery image click handler
-    $('.gallery-item img').on('click', function() {
-        const imageSrc = $(this).attr('src');
-        $('#modalImage').attr('src', imageSrc);
+    $("#news-next").click(function() {
+        $("#news-carousel").trigger("next.owl.carousel", [300]);  
     });
     
-    // Tab switching with fade effect
-    $('.nav-link[data-bs-toggle="tab"]').on('shown.bs.tab', function (e) {
-        const target = $(e.target.getAttribute('data-bs-target'));
-        target.hide().fadeIn(300);
+    $("#news-prev").click(function() {
+        $("#news-carousel").trigger("prev.owl.carousel", [300]);
     });
-    
-    // Smooth hover effects for news cards
-    $('.news-card').hover(
-        function() {
-            $(this).find('.news-card-img img').addClass('hover-scale');
-        },
-        function() {
-            $(this).find('.news-card-img img').removeClass('hover-scale');
-        }
-    );
-});
 
-// راه‌اندازی کاروسل گالری با نمایش آیتم‌های نصفه در لبه‌ها
+
 $(document).ready(function() {
     $("#gallery-carousel").owlCarousel({
         rtl: true,
@@ -106,4 +82,108 @@ $(document).ready(function() {
                 behavior: 'smooth'
             });
         }
+
+
+$(document).ready(function() {
+    $('.main-nav ul li:first-child').addClass('active');
+    
+    $('.main-nav ul li').on('click', function(e) {
+        $('.main-nav ul li').removeClass('active');
+        
+        $(this).addClass('active');
+    });
+});
+
+// Add this JavaScript code to your script.js file
+
+// Mobile Navigation Functionality
+$(document).ready(function() {
+    const mobileMenuToggle = $('.mobile-menu-toggle');
+    const mobileNav = $('.mobile-nav');
+    const mobileNavOverlay = $('.mobile-nav-overlay');
+    
+    // Toggle mobile menu when hamburger button is clicked
+    mobileMenuToggle.on('click', function() {
+        $(this).toggleClass('active');
+        mobileNav.toggleClass('active');
+        mobileNavOverlay.toggleClass('active');
+        
+        // Prevent body scrolling when menu is open
+        if (mobileNav.hasClass('active')) {
+            $('body').css('overflow', 'hidden');
+        } else {
+            $('body').css('overflow', '');
+        }
+    });
+    
+    // Close mobile menu when overlay is clicked
+    mobileNavOverlay.on('click', function() {
+        mobileMenuToggle.removeClass('active');
+        mobileNav.removeClass('active');
+        mobileNavOverlay.removeClass('active');
+        $('body').css('overflow', '');
+    });
+    
+    // Handle active state for mobile navigation items
+    $('.mobile-nav ul li').on('click', function() {
+        $('.mobile-nav ul li').removeClass('active');
+        $(this).addClass('active');
+        
+        // Close menu after clicking a menu item
+        mobileMenuToggle.removeClass('active');
+        mobileNav.removeClass('active');
+        mobileNavOverlay.removeClass('active');
+        $('body').css('overflow', '');
+    });
+});
+
+// اضافه کردن کد جاوااسکریپت برای مدیریت بهتر تب‌ها در حالت موبایل
+
+$(document).ready(function() {
+    // تنظیم ارتفاع منوی تب در حالت افقی برای صفحات متوسط
+    function adjustTabHeight() {
+        if ($(window).width() <= 992 && $(window).width() > 576) {
+            // پیدا کردن ارتفاع محتوای فعال
+            let activeTabHeight = $('.tab-pane.active').outerHeight();
+            // تنظیم حداقل ارتفاع منوی تب برابر با ارتفاع محتوا
+            $('.news-tab-nav').css('min-height', activeTabHeight + 'px');
+        } else {
+            // بازگرداندن به حالت عادی در سایر سایزها
+            $('.news-tab-nav').css('min-height', '');
+        }
+    }
+    
+    // اجرای تابع تنظیم ارتفاع در لود اولیه
+    adjustTabHeight();
+    
+    // اجرای مجدد در تغییر سایز صفحه
+    $(window).resize(function() {
+        adjustTabHeight();
+    });
+    
+    // اجرای مجدد هنگام تغییر تب
+    $('.nav-link').on('shown.bs.tab', function() {
+        adjustTabHeight();
+    });
+    
+    // اسکرول خودکار به تب فعال در حالت موبایل
+    $('.nav-link').on('shown.bs.tab', function() {
+        if ($(window).width() <= 576) {
+            let $activeTab = $(this).parent();
+            let $tabsContainer = $('.news-tab-nav');
+            
+            // محاسبه موقعیت اسکرول برای مرکز قرار دادن تب فعال
+            let tabPosition = $activeTab.position().left;
+            let tabWidth = $activeTab.width();
+            let containerWidth = $tabsContainer.width();
+            
+            let scrollTo = tabPosition - (containerWidth / 2) + (tabWidth / 2);
+            
+            // اسکرول به موقعیت محاسبه شده با انیمیشن
+            $tabsContainer.animate({
+                scrollLeft: scrollTo
+            }, 300);
+        }
+    });
+});
 

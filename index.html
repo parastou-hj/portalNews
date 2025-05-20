@@ -8,19 +8,20 @@
     <link rel="stylesheet" href="./css/owl.theme.default.min.css">
         <script src="https://kit.fontawesome.com/f595c78486.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./query.css">
     <title>پرتال خبری</title>
 </head>
 <body>
     <header>
-        <div class="container-fluid px-0">
+        <div class="container-fluid px-0 px-sm-auto ">
             <div class="row col-xl-11 py-3">
-                <div class="col-lg-5 d-flex align-items-center ">
+                <div class="col-lg-5 col-10 d-flex align-items-center ">
                     <div class="logo-img">
                         <img src="./images/logo.png" alt="">
                     </div>
-                    <span>پرتال خبری</span>
+                    <span class="portal">پرتال خبری</span>
                 </div>
-                <div class="col-lg-7 d-flex align-items-center">
+                <div class="col-lg-7 col-2 d-flex align-items-center justify-content-end">
                     <nav class="main-nav">
                         <ul >
                             <li>
@@ -40,50 +41,106 @@
                             </li>
                         </ul>
                     </nav>
+                    <button class="mobile-menu-toggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
                 </div>
 
             </div>
         </div>
+        <div class="mobile-nav-overlay"></div>
+
+<!-- Mobile Side Navigation -->
+<div class="mobile-nav">
+    <div class="mobile-nav-logo">
+        <img src="./images/logo.png" alt="لوگو">
+        <span>پرتال خبری</span>
+    </div>
+    <ul>
+        <li class="active">
+            <a href="#">صفحه اصلی اخبار</a>
+        </li>
+        <li>
+            <a href="#">ورزشی</a>
+        </li>
+        <li>
+            <a href="#">همکاران</a>
+        </li>
+        <li>
+            <a href="#">ساخت و تولید</a>
+        </li>
+        <li>
+            <a href="#">گالری تصاویر</a>
+        </li>
+        <li>
+            <a href="#">نشریه داخلی</a>
+        </li>
+        <li>
+            <a href="#">حضورهای نمایشگاهی</a>
+        </li>
+        <li>
+            <a href="#">مناقصات مزایدات</a>
+        </li>
+    </ul>
+</div>
     </header>
     <main>
-        <div class="news-ticker-container">
+       <div class="container-fluid my-3">
+        <div class="row col-xl-11">
+             <div class="news-ticker-container">
     <div class="news-ticker-label">تیتر خبری</div>
     <div class="news-items-viewport">
         <div class="news-items-wrapper">
            
             <div class="news-content-block">
-                <span class="news-item">پیام تبریک دکتر کارگرنیا رئیس شورای اسلامی شهر رشت به مناسبت فرا رسیدن روز معلم</span>
-                <span class="news-item-separator">•</span>
-                <span class="news-item">بسته‌های سرمایه‌گذاری در ۲ معدن گیلان آماده واگذاری شد</span>
-                <span class="news-item-separator">•</span>
-                <span class="news-item">رایزنی با اتاق‌های مشترک ایران برای جذب سرمایه‌گذار خارجی</span>
-                <span class="news-item-separator">•</span>
-                <span class="news-item">خبر آزمایشی چهارم برای طولانی‌تر شدن نوار</span>
+                <a class="news-item">پیام تبریک دکتر کارگرنیا رئیس شورای اسلامی شهر رشت به مناسبت فرا رسیدن روز معلم</a>
+                <span class="news-item-separator"></span>
+                <a class="news-item">بسته‌های سرمایه‌گذاری در ۲ معدن گیلان آماده واگذاری شد</a>
+                <span class="news-item-separator"></span>
+                <a class="news-item">رایزنی با اتاق‌های مشترک ایران برای جذب سرمایه‌گذار خارجی</a>
+                <span class="news-item-separator"></span>
+                <a class="news-item">خبر آزمایشی چهارم برای طولانی‌تر شدن نوار</a>
+                 <span class="news-item-separator"></span>
             </div>
            
             <div class="news-content-block" aria-hidden="true">
-                <span class="news-item">پیام تبریک دکتر کارگرنیا رئیس شورای اسلامی شهر رشت به مناسبت فرا رسیدن روز معلم</span>
-                <span class="news-item-separator">•</span>
-                <span class="news-item">بسته‌های سرمایه‌گذاری در ۲ معدن گیلان آماده واگذاری شد</span>
-                <span class="news-item-separator">•</span>
-                <span class="news-item">رایزنی با اتاق‌های مشترک ایران برای جذب سرمایه‌گذار خارجی</span>
-                <span class="news-item-separator">•</span>
-                <span class="news-item">خبر آزمایشی چهارم برای طولانی‌تر شدن نوار</span>
+                <a class="news-item">پیام تبریک دکتر کارگرنیا رئیس شورای اسلامی شهر رشت به مناسبت فرا رسیدن روز معلم</a>
+                <span class="news-item-separator"></span>
+                <a class="news-item">بسته‌های سرمایه‌گذاری در ۲ معدن گیلان آماده واگذاری شد</a>
+                <span class="news-item-separator"></span>
+                <a class="news-item">رایزنی با اتاق‌های مشترک ایران برای جذب سرمایه‌گذار خارجی</a>
+                <span class="news-item-separator"></span>
+                <a class="news-item">خبر آزمایشی چهارم برای طولانی‌تر شدن نوار</a>
+                 <span class="news-item-separator"></span>
             </div>
         </div>
     </div>
 </div>
+        </div>
+       </div>
         <section class="news-weather">
             <div class="container-fluid px-0">
                 <div class="row col-xl-11">
-                    <div class="col-lg-9">
-                        <div class="owl-carousel owl-theme" id="news-carousel">
+                    <div class="col-xl-9 col-lg-8 ">
+                        <div class="news-carousel p-lg-4">
+                            <button class="gallery-nav gallery-nav-next" id="news-next">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                            <button class="gallery-nav gallery-nav-prev" id="news-prev">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <div class="owl-carousel owl-theme" id="news-carousel">
                             <div class="news-carousel-item d-flex">
                                 <div class="news-carousel-img">
                                     <img src="./images/frst-news.png" alt="">
                                 </div>
                                 <div class="news-carousel-txt">
+                                    <div class="carousel-title position-relative d-flex align-items-start">
+                                        <span class="news-item-separator"></span>
                                     <h1>موفقیت نیروگاه های در دست بهره برداری شرکت O&M مپنا در پیک اول تابستان</h1>
+                                    </div>
                                     <p class="date"> 14 مرداد 1403</p>
                                     <p>
                                         به گزارش پایگاه خبری اخبار رشت پرس محمد حسین واثق کارگرنیا امروز در مراسم سومین جشنواره فیلم کوتاه رشت در مجتمع فرهنگی هنری خاتم انبیا با تبریک یازدهم اردیبهشت مصادف با روز کارگر و دواردهم اردیبهشت مصادف با روز معلم اظهار کرد: مقدم تمامی میهمانان گرانقدر را از جای جای خیر مقدم عرض میکنم....
@@ -95,7 +152,10 @@
                                     <img src="./images/frst-news.png" alt="">
                                 </div>
                                 <div class="news-carousel-txt">
+                                    <div class="carousel-title position-relative d-flex align-items-start">
+                                        <span class="news-item-separator"></span>
                                     <h1>موفقیت نیروگاه های در دست بهره برداری شرکت O&M مپنا در پیک اول تابستان</h1>
+                                    </div>
                                     <p class="date"> 14 مرداد 1403</p>
                                     <p>
                                         به گزارش پایگاه خبری اخبار رشت پرس محمد حسین واثق کارگرنیا امروز در مراسم سومین جشنواره فیلم کوتاه رشت در مجتمع فرهنگی هنری خاتم انبیا با تبریک یازدهم اردیبهشت مصادف با روز کارگر و دواردهم اردیبهشت مصادف با روز معلم اظهار کرد: مقدم تمامی میهمانان گرانقدر را از جای جای خیر مقدم عرض میکنم....
@@ -103,91 +163,110 @@
                                 </div>
                             </div>
                         </div>
+                        </div>
                     </div>
-                    <div class="col-lg-3">
-    <div class="weather-widget">
-        <div class="weather-header">
-            <button class="city-selector">
-                <i class="fas fa-chevron-down"></i>
-                انتخاب پیش‌فرض (تهران)
-            </button>
-            <span class="weather-title">آب و هوا</span>
-        </div>
-        
-        <div class="main-weather">
-            <div class="main-temp">18/35 <span class="temp-unit">°C</span></div>
-            <div class="weather-icon">
-                <i class="fas fa-cloud-rain"></i>
-            </div>
-        </div>
-        
-        <div class="weather-description">
-            پوشیده از ابر
-        </div>
-        
-        <div class="weather-details">
-            <div class="detail-row">
-                <span class="detail-label">
-                    <i class="fas fa-thermometer-half"></i>
-                    احساس دما
-                </span>
-                <span class="detail-value">8-18/35</span>
-            </div>
-            <div class="detail-row">
-                <span class="detail-label">
-                    <i class="fas fa-sun"></i>
-                    اذان صبح
-                </span>
-                <span class="detail-value">7:02</span>
-            </div>
-            <div class="detail-row">
-                <span class="detail-label">
-                    <i class="fas fa-cloud-sun"></i>
-                    اذان ظهر
-                </span>
-                <span class="detail-value">7:20</span>
-            </div>
-        </div>
-        
-        <div class="forecast-section">
-            <div class="forecast-title">
-                اوقات شرعی تهران<br>
-                <small>امروز دوشنبه 15 اردیبهشت</small>
-            </div>
-            
-            <div class="forecast-items">
-                <div class="forecast-item">
-                    <span class="forecast-label">طلوع</span>
-                    <span class="forecast-value">06:08</span>
-                </div>
-                <div class="forecast-item">
-                    <span class="forecast-label">اذان صبح</span>
-                    <span class="forecast-value">13:01</span>
-                </div>
-                <div class="forecast-item">
-                    <span class="forecast-label">اذان ظهر</span>
-                    <span class="forecast-value">19:14</span>
-                </div>
-                <div class="forecast-item">
-                    <span class="forecast-label">اذان مغرب</span>
-                    <span class="forecast-value">19:14</span>
-                </div>
-                <div class="forecast-item">
-                    <span class="forecast-label">نیمه شب</span>
-                    <span class="forecast-value">23:13</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+                    <div class="col-xl-3 col-lg-4 mt-4 mt-lg-0">
+                        <div class="weather-widget">
+                            <div class="weather-header py-2">
+                                 <span class="weather-title">آب و هوا</span>
+                                <button class="city-selector">
+                                    
+                                    انتخاب پیش‌فرض (تهران)
+                                   <i class="fas fa-chevron-down me-1"></i>
+                                </button>
+                               
+                            </div>
+                           <div class="weather-detail-container">
+                             
+                            <div class="">
+                                <div class="main-weather ">
+                                <div class="main-temp ">
+                                      <div class="d-flex align-items-center">
+                                        <span class="temp-unit ">°C</span> 
+                                      <span class="me-2">18/35</span>
+                                      </div>
+                                       <div class="weather-description">
+                                            پوشیده از برف
+                                        </div>
+                                </div>
+                                <div class="weather-icon">
+                                    <img src="./images/rain.png" alt="">
+                                </div>
+                            </div>
+
+                            <div class="weather-details d-flex justify-content-between">
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <p>5:11 ق.ظ</p>
+                                        <p>7:03 ب.ظ</p>
+                                    </div>
+                                    <div class="me-3">
+                                        <img src="./images/sun.png" alt="">
+                                    </div>
+                                </div>
+                                 <div class="d-flex justify-content-between">
+                                    <div>
+                                        <p>
+                                            18/35
+                                            <i class="fas fa-chevron-up"></i>
+                                        </p>
+                                          <p>
+                                            18/35
+                                            <i class="fas fa-chevron-down"></i>
+                                        </p>
+                                    </div>
+                                    <div class="me-3">
+                                        <img src="./images/temp.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                                
+                            
+                            <div class="forecast-section">
+                                <div class="forecast-title">
+                                    اوقات شرعی تهران<br>
+                                    <small>امروز دوشنبه 15 اردیبهشت</small>
+                                </div>
+                                
+                                <div class="forecast-items">
+                                    <div class="forecast-item">
+                                        <span class="forecast-label">طلوع</span>
+                                        <span class="forecast-value">06:08</span>
+                                    </div>
+                                    <div class="forecast-item">
+                                        <span class="forecast-label">اذان صبح</span>
+                                        <span class="forecast-value">13:01</span>
+                                    </div>
+                                    <div class="forecast-item">
+                                        <span class="forecast-label">اذان ظهر</span>
+                                        <span class="forecast-value">12:14</span>
+                                    </div>
+                                     <div class="forecast-item">
+                                        <span class="forecast-label">غروب</span>
+                                        <span class="forecast-value">19:14</span>
+                                    </div>
+                                    <div class="forecast-item">
+                                        <span class="forecast-label">اذان مغرب</span>
+                                        <span class="forecast-value">19:14</span>
+                                    </div>
+                                    <div class="forecast-item">
+                                        <span class="forecast-label">نیمه شب</span>
+                                        <span class="forecast-value">23:13</span>
+                                    </div>
+                                </div>
+                            </div>
+                           </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
         <!-- Navigation Tabs -->
 <section class="news-tabs-section">
-    <div class="container-fluid px-0">
+    <div class="container-fluid">
         <div class="row col-xl-11">
-            <div class="col-12">
+            <div class="col-12 news-tab-container">
                 <!-- Tab Navigation -->
                 <ul class="nav nav-tabs news-tab-nav" id="newsTabList" role="tablist">
                     <li class="nav-item" role="presentation">
@@ -568,7 +647,7 @@
 
 <!-- Latest News Section -->
 <section class="latest-news-section">
-    <div class="container-fluid px-0">
+    <div class="container-fluid ">
         <div class="row col-xl-11">
             <div class="col-12">
                 <div class="latest-news-header">
@@ -679,9 +758,9 @@
         </div>
     </div>
 </section>
-<!-- Image Gallery Section (گالری تصاویر) -->
-<section class="image-gallery-section">
-    <div class="container-fluid px-0">
+
+<section class="image-gallery-section mb-5">
+    <div class="container-fluid ">
         <div class="">
             <div class="col-12">
                  <div class="latest-news-header">
@@ -762,17 +841,19 @@
       </div>
       <div class="col-md-9">
         <div class="loc-tel d-flex align-items-center justify-content-between">
-            <div class=" mb-3 text-right d-flex align-items-center location">
+          
+             <div class=" mb-3 text-right d-flex align-items-center location">
                 <img src="./images/loc.png" alt="" >
                 <div class="pe-2">
                      <p class="mb-1">آدرس: البرز، فردیس، کیلومتر ۷، بلوار شهید سلیمانی</p>
                      <p class="mb-1"> مپنا شرکت تعمیرات نیروگاهی ایران </p>
                 </div>
-      </div>
-       <div class=" mb-3 ">
-        <p class="mb-1"> <img src="./images/tel.png" alt="" class="ms-1">تلفن : ۰۲۱-۳۱۹۵۰۰۰۰</p>
-        <p class="mb-1"><img src="./images/mail.png" alt="" class="ms-1" >ایمیل : <a href="mailto:info@ipr-co.org">info@ipr-co.org </a></p>
-      </div>
+            </div>
+            <div class=" mb-3 ">
+                <p class="mb-1"> <img src="./images/tel.png" alt="" class="ms-1">تلفن : ۰۲۱-۳۱۹۵۰۰۰۰</p>
+                <p class="mb-1"><img src="./images/mail.png" alt="" class="ms-1" >ایمیل : <a href="mailto:info@ipr-co.org">info@ipr-co.org </a></p>
+            </div>
+           
         </div>
          <div class=" mb-3">
             <div class="footer-nav my-3">
