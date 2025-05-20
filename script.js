@@ -125,12 +125,12 @@ $(document).ready(function() {
         mobileNavOverlay.removeClass('active');
         $('body').css('overflow', '');
     });
-    // $('.mobile-menu-close').on('click', function(){
-    //     mobileMenuToggle.removeClass('active');
-    //     mobileNav.removeClass('active');
-    //      mobileNavOverlay.removeClass('active');
-    //     $('body').css('overflow', '');
-    // })
+    $('.mobile-menu-close').on('click', function(){
+        mobileMenuToggle.removeClass('active');
+        mobileNav.removeClass('active');
+         mobileNavOverlay.removeClass('active');
+        $('body').css('overflow', '');
+    })
     
     // Handle active state for mobile navigation items
     $('.mobile-nav ul li').on('click', function() {
