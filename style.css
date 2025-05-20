@@ -27,6 +27,9 @@ a{
   }
   
 
+:root{
+    --primary-color:hsl(160.88deg 43.96% 59.41%)
+}
 body {
     font-family: iranyekanwebregularfanum;
     direction: rtl;
@@ -37,6 +40,9 @@ body {
 }
 .main-nav{
 
+}
+.main-nav ul{
+    margin-bottom: 0px;
 }
 .main-nav ul li{
     display: inline-block;
@@ -54,76 +60,75 @@ body {
 }
 header{
     box-shadow: 0px 2px 10px 2px #f0efef;
+    background-image: url(./images/protal-header-back.png);
 }
 
 
 .news-ticker-container {
   display: flex;
   align-items: center;
-  background-color: #fff; /* پس زمینه سفید برای کل نوار */
-  border: 1px solid #cce8e5; /* حاشیه سبزآبی روشن */
-  border-radius: 30px; /* گردی گوشه‌ها مطابق عکس */
-  padding: 8px; /* کمی پدینگ داخلی */
-  overflow: hidden; /* مهم: برای اینکه محتوای متحرک از کادر بیرون نزند */
+  background-color: #fff; 
+  border: 1px solid #cce8e5; 
+  border-radius: 30px; 
+  padding: 8px; 
+  overflow: hidden; 
   box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
 .news-ticker-label {
-  background-color: #66cdaa; /* رنگ سبزآبی برچسب */
+  background-color: #66cdaa; 
   color: white;
   padding: 8px 20px;
-  border-radius: 20px; /* گردی گوشه‌های برچسب */
+  border-radius: 20px; 
   font-weight: bold;
-  white-space: nowrap; /* جلوگیری از شکستن کلمه "تیتر خبری" */
-  margin-left: 10px; /* فاصله از خبرها (در حالت RTL، margin-left فاصله راست ایجاد می‌کند) */
+  white-space: nowrap; 
+  margin-left: 10px; 
 }
 
 .news-items-viewport {
-  flex-grow: 1; /* اجازه می‌دهد بخش خبرها فضای باقی‌مانده را پر کند */
-  overflow: hidden; /* مهم: برای ایجاد افکت پنجره مانند */
-  /* جهت حرکت انیمیشن از چپ به راست است، پس خود ویوپورت LTR باشد بهتر است */
+  flex-grow: 1; 
+  overflow: hidden; 
   direction: ltr; 
 }
 
 .news-items-wrapper {
-  display: flex; /* خبرها و کپی آنها را در یک ردیف قرار می‌دهد */
-  width: fit-content; /* عرض بر اساس محتوا */
-  /* انیمیشن برای حرکت از چپ به راست */
-  /* محتوا از 50% به چپ منتقل شده (بلوک دوم در ابتدا دیده می‌شود) و به 0 (بلوک اول دیده می‌شود) حرکت می‌کند */
+  display: flex; 
+  width: fit-content; 
+
   animation: scroll-left-to-right 25s linear infinite;
 }
 
 .news-items-wrapper:hover {
-  animation-play-state: paused; /* توقف انیمیشن با هاور موس */
+  animation-play-state: paused; 
 }
 
 .news-content-block {
-  display: flex; /* آیتم‌های خبر را در یک خط قرار می‌دهد */
-  white-space: nowrap; /* جلوگیری از شکستن متن هر خبر */
+  display: flex; 
+  white-space: nowrap; 
   /* padding-right: 20px; /* ایجاد فاصله بین دو بلوک محتوا، اگر لازم باشد */
 }
 
 .news-item {
-  padding: 0 10px; /* فاصله اطراف هر خبر */
+  /* padding: 0 10px;  */
   color: #333;
   font-size: 14px;
 }
 
 .news-item-separator {
-  color: #66cdaa; /* رنگ جداکننده */
+  color: #66cdaa; 
   padding: 0 5px;
   font-size: 14px;
-  display: inline-flex; /* برای تراز عمودی بهتر */
+  display: inline-flex; 
   align-items: center;
 }
 
 /* تعریف انیمیشن */
 @keyframes scroll-left-to-right {
   0% {
-    transform: translateX(-50%); /* شروع از جایی که بلوک دوم (کپی) در ابتدا دیده می‌شود */
+    transform: translateX(-50%); 
   }
   100% {
-    transform: translateX(0%);    /* حرکت به سمت راست تا بلوک اول به طور کامل دیده شود و بلوک دوم آماده جایگزینی باشد */
+    transform: translateX(0%);    
   }
 }
 
@@ -297,9 +302,9 @@ header{
 }
 
 .news-tab-nav {
-    border-bottom: 2px solid #e9ecef;
+    border-bottom: none;
     margin-bottom: 30px;
-    justify-content: center;
+    /* justify-content: center; */
 }
 
 .news-tab-nav .nav-item {
@@ -310,8 +315,8 @@ header{
     background: none;
     border: none;
     border-radius: 0;
-    color: #6c757d;
-    font-weight: 500;
+    color: #333;
+    font-weight: 700;
     padding: 15px 25px;
     position: relative;
     transition: all 0.3s ease;
@@ -319,15 +324,15 @@ header{
 }
 
 .news-tab-nav .nav-link:hover {
-    color: #007bff;
+    color: var(--primary-color);
     background-color: transparent;
     border-color: transparent;
 }
 
 .news-tab-nav .nav-link.active {
-    color: #007bff;
+    color: var(--primary-color);
     background-color: transparent;
-    border-bottom-color: #007bff;
+    border-bottom-color: var(--primary-color);
     font-weight: 600;
 }
 
@@ -382,7 +387,7 @@ header{
 .news-date {
     color: #6c757d;
     font-size: 14px;
-    margin-bottom: 15px;
+    /* margin-bottom: 15px; */
 }
 
 .news-excerpt {
@@ -484,29 +489,44 @@ header{
     }
 }
 
-/* Latest News Section Styles */
 .latest-news-section {
     padding: 50px 0;
     background-color: #f8f9fa;
 }
+.latest-news-header {
+    margin: 50px 0px;
+    position: relative;
+    background-color: #f8f9fa;
+    text-align: right;
+    border-bottom: 1px solid hsl(0deg 0% 74.12%);
+}
 
 .section-title {
-    text-align: center;
-    font-size: 2.5rem;
-    font-weight: bold;
+    font-size: 1.4em;
+    font-weight: 600;
     color: #333;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
+    display: inline-block;
     position: relative;
+    padding:10px 15px;
 }
+
+
+
 
 .section-title::after {
     content: '';
     display: block;
-    width: 80px;
-    height: 3px;
-    background-color: #007bff;
-    margin: 15px auto 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary-color); 
+    position: absolute;
+    bottom: -10px;
+    right: 0;
 }
+
+
+
 
 .latest-news-container {
     display: flex;
@@ -519,13 +539,17 @@ header{
 .news-sidebar {
     flex: 1;
     max-width: 400px;
+    height: 500px;
+    max-height: 500px;
+    overflow-y: auto;
+    border-radius: 15px;
 }
 
 .news-list {
     background: white;
     border-radius: 15px;
     padding: 20px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); */
 }
 
 .news-list-item {
@@ -543,7 +567,7 @@ header{
 .news-list-item::before {
     content: '';
     position: absolute;
-    left: 0;
+    right: 0;
     top: 0;
     bottom: 0;
     width: 4px;
@@ -553,7 +577,7 @@ header{
 
 .news-list-item.active::before,
 .news-list-item:hover::before {
-    background-color: #007bff;
+    background-color: var(--primary-color);
 }
 
 .news-list-item:hover {
@@ -575,8 +599,9 @@ header{
 
 .news-meta {
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     align-items: center;
+    margin-top: 10px;
 }
 
 .news-date {
@@ -588,145 +613,326 @@ header{
     color: #28a745;
     font-size: 14px;
     font-weight: 500;
+    margin-right: 15px;
 }
 
-/* Right Content - News Images */
-.news-content {
+
+.news-content{
     flex: 2;
 }
-
 .news-grid {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     gap: 15px;
     height: 500px;
 }
-
 .news-item {
     position: relative;
-    border-radius: 15px;
+    border-radius: 10px;
     overflow: hidden;
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Primary hover effect: slight rise with shadow */
 .news-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+    z-index: 1;
 }
-
-.news-item.large {
-    grid-row: 1 / -1;
-}
-
-.news-item.small.top {
-    grid-column: 2;
-    grid-row: 1;
-}
-
-.news-item.small.bottom-left {
-    grid-column: 2;
-    grid-row: 2;
-}
-
-.news-item.small.bottom-right {
-    display: none; /* Hidden in this layout as we only have 3 visible images */
-}
-
-.news-image {
-    position: relative;
+.news-image{
     width: 100%;
     height: 100%;
-    overflow: hidden;
+    position: relative;
 }
-
 .news-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.3s ease;
+    transition: transform 0.5s ease;
 }
 
 .news-item:hover .news-image img {
-    transform: scale(1.1);
+    transform: scale(1.08);
 }
 
+/* Overlay transition effect */
 .news-overlay {
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.5));
     color: white;
-    padding: 20px;
-    transform: translateY(100%);
-    transition: transform 0.3s ease;
+    padding: 15px;
+    transition: all 0.4s ease;
+    height: 80px; /* Initial height that just shows the tag and part of text */
+    overflow: hidden;
 }
 
 .news-item:hover .news-overlay {
-    transform: translateY(0);
+    height: 120px; /* Expanded height on hover to show more text */
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.85));
+    padding-bottom: 25px;
 }
 
+/* News tag animation */
 .news-tag {
     display: inline-block;
-    background-color: #28a745;
+    background-color: #66cdaa;
     color: white;
     padding: 4px 12px;
     border-radius: 20px;
     font-size: 12px;
     font-weight: 500;
     margin-bottom: 10px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
 
+.news-item:hover .news-tag {
+    transform: translateY(-2px);
+    box-shadow: 0 3px 8px rgba(102, 205, 170, 0.5);
+}
+
+/* Text description animation */
 .news-description {
     font-size: 14px;
     line-height: 1.5;
     margin: 0;
+    opacity: 0.9;
+    transform: translateY(0);
+    transition: all 0.4s ease;
 }
 
-/* Responsive Design */
-@media (max-width: 1024px) {
-    .latest-news-container {
-        flex-direction: column;
-    }
-    
-    .news-sidebar {
-        max-width: 100%;
-    }
-    
-    .news-grid {
-        height: 400px;
-    }
+.news-item:hover .news-description {
+    opacity: 1;
+    transform: translateY(-5px);
 }
 
+/* Add a subtle border glow effect */
+.news-item::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 10px;
+    box-shadow: 0 0 0 0 rgba(102, 205, 170, 0);
+    transition: box-shadow 0.4s ease;
+    pointer-events: none;
+}
+
+.news-item:hover::after {
+    box-shadow: 0 0 0 3px rgba(102, 205, 170, 0.4);
+}
+
+/* Alternative hover effect for smaller screens */
 @media (max-width: 768px) {
-    .news-grid {
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr 1fr;
-        height: auto;
+    .news-item:hover {
+        transform: translateY(-3px);
     }
     
-    .news-item.large {
-        grid-row: 1;
-    }
-    
-    .news-item.small.top {
-        grid-column: 1;
-        grid-row: 2;
-    }
-    
-    .news-item.small.bottom-left {
-        grid-column: 1;
-        grid-row: 3;
-        display: block;
-    }
-    
-    .news-item {
-        height: 250px;
-    }
-    
-    .section-title {
-        font-size: 2rem;
+    .news-item:hover .news-overlay {
+        height: 100px;
     }
 }
+
+/* استایل‌های بخش گالری تصاویر */
+.image-gallery-section {
+    padding: 50px 0;
+    background-color: #f8f9fa;
+    position: relative;
+}
+
+.gallery-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 30px;
+    text-align: right;
+    position: relative;
+    padding-right: 15px;
+    display: inline-block;
+}
+
+.gallery-title::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 5px;
+    height: 20px;
+    background-color: #66cdaa;
+    border-radius: 2px;
+}
+
+.gallery-carousel-container {
+    position: relative;
+    padding: 0 50px;
+}
+
+/* استایل‌های آیتم کاروسل گالری */
+.gallery-carousel-item {
+    margin: 0 10px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    transition: all 0.3s ease;
+    background-color: white;
+}
+
+.gallery-carousel-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.gallery-image {
+    height: 220px;
+    overflow: hidden;
+    border-radius: 15px 15px 0 0;
+}
+
+.gallery-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.gallery-carousel-item:hover .gallery-image img {
+    transform: scale(1.05);
+}
+
+.gallery-caption {
+    padding: 15px;
+    background-color: var(--primary-color);
+    display: flex;
+    align-items: flex-start;
+}
+
+.caption-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #66cdaa;
+    margin-left: 10px;
+    margin-top: 8px;
+    flex-shrink: 0;
+}
+
+.gallery-caption p {
+    margin: 0;
+    color: #333;
+    font-size: 14px;
+    line-height: 1.6;
+    font-weight: 500;
+}
+
+/* دکمه‌های ناوبری */
+.gallery-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background-color: #66cdaa;
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 5;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 10px rgba(102, 205, 170, 0.3);
+}
+
+.gallery-nav:hover {
+    background-color: #5ab89a;
+    box-shadow: 0 5px 15px rgba(102, 205, 170, 0.5);
+}
+
+.gallery-nav-prev {
+    left: 10px;
+}
+
+.gallery-nav-next {
+    right: 10px;
+}
+
+/* تنظیمات واکنش‌گرا */
+@media (max-width: 768px) {
+    .gallery-image {
+        height: 180px;
+    }
+    
+    .gallery-carousel-container {
+        padding: 0 30px;
+    }
+    
+    .gallery-nav {
+        width: 35px;
+        height: 35px;
+        font-size: 14px;
+    }
+}
+
+
+   .footer {
+      padding: 40px 20px;
+      background-color: #1b1b1b;
+      border-top: 1px solid #333;
+      color: #fff;
+      position: relative;
+    }
+    .up{
+      position: absolute;
+      left: 10px;
+      bottom: 50px;
+      cursor: pointer;
+    }
+    .up:hover{
+      transform: translateY(-5px);
+      transition: transform .5s ease;
+    }
+    .footer a {
+      color: #98f1d3;
+      text-decoration: none;
+    }
+    .footer a:hover {
+      text-decoration: underline;
+    }
+    .footer-nav a{
+      color: #fff;
+    }
+     .footer-nav a:hover{
+      color: var(--primary-color);
+    }
+    .location{
+      min-width: 370px;
+    }
+    
+    .footer .social-icons img {
+      font-size: 24px;
+      margin-left: 10px;
+      color: #98f1d3;
+    }
+    .footer .footer-logo {
+      color: #98f1d3;
+    }
+    .footer .footer-bottom {
+      color: #aaa;
+      font-size: 14px;
+    }
+    .footer .footer-bottom span {
+      color: #98f1d3;
+    }

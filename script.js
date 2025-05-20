@@ -52,3 +52,58 @@ $(document).ready(function() {
     );
 });
 
+// راه‌اندازی کاروسل گالری با نمایش آیتم‌های نصفه در لبه‌ها
+$(document).ready(function() {
+    $("#gallery-carousel").owlCarousel({
+        rtl: true,
+        center: false,
+        items: 3.5,  
+        margin: 10,
+        nav: false,
+        dots: false,
+        loop: true,
+        autoplay: true,
+        autoplayTimeout: 5000,
+        autoplayHoverPause: true,
+        stagePadding: 20,  
+        responsive: {
+            0: {
+                items: 1.2,  
+                stagePadding: 30
+            },
+            576: {
+                items: 1.8, 
+                stagePadding: 40
+            },
+            768: {
+                items: 2.2, 
+                stagePadding: 50
+            },
+            992: {
+                items: 2.8, 
+                stagePadding: 60
+            },
+            1200: {
+                items: 3,  
+                stagePadding: 50
+            }
+        }
+    });
+    
+    // ناوبری سفارشی
+    $(".gallery-nav-prev").click(function() {
+        $("#gallery-carousel").trigger("next.owl.carousel", [300]);  // سرعت انیمیشن را کمی افزایش داده‌ایم
+    });
+    
+    $(".gallery-nav-next").click(function() {
+        $("#gallery-carousel").trigger("prev.owl.carousel", [300]);
+    });
+});
+
+ function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
